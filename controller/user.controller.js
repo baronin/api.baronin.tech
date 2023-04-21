@@ -2,15 +2,15 @@ const db = require('../db');
 
 class UserController {
     async createUser(req, res) {
-        const { name, surname } = req.body;
-        const newPerson = await db.query(`INSERT INTO person (name, surname) values ($1, $2) RETURNING *`, [name, surname]);
+        const { name, surname, email, phone } = req.body;
+        const newPerson = await db.query(`INSERT INTO person (name, surname, email, phone) values ($1, $2, $3, $4) RETURNING *`, [name, surname, email, phone]);
         console.log(name, surname)
         res.json(newPerson.rows[0]);
     }
 
     async getUsers(req, res) {
         const users = await db.query('SELECT * FROM person');
-        res.json(users.rows)
+        res.json(users.rows);
     }
 
     async getOneUser(req, res) {

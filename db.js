@@ -7,4 +7,4 @@ const pool = new Pool({
     database: "node_postgres"
 });
 
-module.exports = pool
+module.exports = pool;

@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = require('./routes/user.routes');
 const postRouter = require('./routes/post.routes');
+const authRouter = require('./routes/auth.routes');
 
 const pg = require('pg');
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use('/api', userRouter);
 app.use('/api', postRouter);
+app.use('/api', authRouter);
 
 // Устанавливаем соединение с базой данных
 const pool = new pg.Pool({
