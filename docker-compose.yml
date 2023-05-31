@@ -9,16 +9,14 @@ services:
   db_auth:
     container_name: db_auth
     ports:
-      - "6101:6101"
+      - "5432:5432"
     environment:
-      - POSTGRES_PASSWORD=root
       - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=root
     image: postgres:15.3-alpine3.17
-    command: 
-      - "postgres"
-      - "-c"
-      - "port:6101"
     volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
       - db_auth_vol:/var/lib/postgresql/data/
 volumes:
   db_auth_vol: {}
+
