@@ -1,21 +1,31 @@
 {
-  "name": "api.shtraffof.net",
+  "name": "api.baronin.tech",
   "version": "1.0.0",
   "description": "PostgreSQL Express Swagger",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "pg": "^8.10.0",
     "sequelize": "^6.30.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@faker-js/faker": "^8.0.2",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
   }
 }
