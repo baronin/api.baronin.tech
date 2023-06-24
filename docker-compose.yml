@@ -9,7 +9,7 @@ services:
   db_auth:
     container_name: db_auth
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=root
@@ -19,4 +19,3 @@ services:
       - db_auth_vol:/var/lib/postgresql/data/
 volumes:
   db_auth_vol: {}
-
